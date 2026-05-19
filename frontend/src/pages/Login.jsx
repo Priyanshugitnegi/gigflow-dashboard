@@ -27,10 +27,13 @@ window.location.href = "/dashboard";
 }
   };
 
-  return (
-    <div>
+return (
 
-      <h2>Login</h2>
+  <div className="auth-container">
+
+    <div className="auth-card">
+
+      <h2>GigFlow Login</h2>
 
       <input
         type="text"
@@ -38,22 +41,25 @@ window.location.href = "/dashboard";
         onChange={(e) => setUsername(e.target.value)}
       />
 
-      <br /><br />
-
       <input
         type="password"
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <br /><br />
-
       <button onClick={handleLogin}>
         Login
       </button>
 
+      <p style={{ textAlign: "center" }}>
+        Don’t have an account?
+        <a href="/register"> Sign Up</a>
+      </p>
+
     </div>
-  );
+
+  </div>
+);
 }
 
 export default Login;
