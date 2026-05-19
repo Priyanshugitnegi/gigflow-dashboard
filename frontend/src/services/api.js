@@ -8,7 +8,16 @@ API.interceptors.request.use((req) => {
 
   const token = localStorage.getItem("token");
 
-  if (token) {
+  const authRoutes = [
+    "/auth/login/",
+    "/auth/register/",
+  ];
+
+  const isAuthRoute = authRoutes.some((route) =>
+    req.url.includes(route)
+  );
+
+  if (token && !isAuthRoute) {
     req.headers.Authorization = `Bearer ${token}`;
   }
 
