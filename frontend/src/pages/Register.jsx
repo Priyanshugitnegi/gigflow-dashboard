@@ -4,6 +4,7 @@ import API from "../services/api";
 function Register() {
 
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegister = async () => {
@@ -12,6 +13,7 @@ function Register() {
 
       await API.post("/auth/register/", {
         username,
+        email,
         password,
       });
 
@@ -21,13 +23,14 @@ function Register() {
 
     } catch (error) {
 
-      console.log(error);
+      console.log(error.response);
 
       alert("Registration Failed");
     }
   };
 
   return (
+
     <div className="auth-container">
 
       <div className="auth-card">
@@ -41,6 +44,12 @@ function Register() {
         />
 
         <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
@@ -51,9 +60,9 @@ function Register() {
         </button>
 
         <p style={{ textAlign: "center" }}>
-  Already have an account?
-  <a href="/"> Login</a>
-</p>
+          Already have an account?
+          <a href="/"> Login</a>
+        </p>
 
       </div>
 
