@@ -20,8 +20,10 @@ function Login() {
 window.location.href = "/dashboard";
 
 } catch (error) {
-  console.log(error);
-  alert("Login Failed");
+
+  console.log(error.response);
+
+  alert(JSON.stringify(error.response?.data));
 }
   };
 
