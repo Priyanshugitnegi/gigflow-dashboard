@@ -23,11 +23,10 @@ function Register() {
 
     } catch (error) {
 
-      console.log(error.response);
+  console.log(error.response);
 
-      alert("Registration Failed");
-    }
-  };
+  alert(JSON.stringify(error.response?.data));
+}
 
   return (
 
