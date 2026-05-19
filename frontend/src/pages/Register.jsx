@@ -50,6 +50,11 @@ function Register() {
           Sign Up
         </button>
 
+        <p style={{ textAlign: "center" }}>
+  Already have an account?
+  <a href="/"> Login</a>
+</p>
+
       </div>
 
     </div>
