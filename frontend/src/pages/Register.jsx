@@ -27,6 +27,7 @@ function Register() {
 
   alert(JSON.stringify(error.response?.data));
 }
+  };
 
   return (
 
